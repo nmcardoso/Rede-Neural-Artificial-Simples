@@ -1,7 +1,7 @@
 import numpy as np
 
 class RedeNeural:
-    FUNCAO_SGIMOIDE = 0
+    FUNCAO_SIGMOIDE = 0
     FUNCAO_TANH = 1
     FUNCAO_ARCTAN = 2
 
@@ -17,10 +17,10 @@ class RedeNeural:
         self.pesos_sinapse = 2 * np.random.random((3, 1)) - 1
 
         # Tipo de função de ativação a ser usada
-        self.tipo_funcao = self.FUNCAO_SGIMOIDE
+        self.tipo_funcao = self.FUNCAO_SIGMOIDE
 
     def funcao_ativacao(self, x, derivada=False):
-        if self.tipo_funcao == self.FUNCAO_SGIMOIDE:
+        if self.tipo_funcao == self.FUNCAO_SIGMOIDE:
             if derivada:
                 return x * (1 - x)
             return 1 / (1 + np.exp(-x))
